@@ -1,29 +1,54 @@
 {
-	"name": "jwc-typescript-starter",
+	"name": "jwc-mediapipe",
 	"version": "1.0.0",
-	"description": "A starter project for using TypeScript with ES Modules.",
+	"description": "A minimal TypeScript repo integrating Google Mediapipe ",
 	"author": "Joseph Barron (Joseph Writes Code)",
 	"website": "http://josephwritescode.com",
 	"license": "MIT",
 	"main": "dist/index.mjs",
+	"type": "module",
 	"scripts": {
 		"start": "node dist/index.mjs",
 		"dev": "tsx watch --clear-screen=false ./src/index.mts",
-		"build": "pkgroll"
+		"build": "pkgroll",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"postinstall": "./bin/_postinstall.bash",
+		"prettier": "prettier --write .",
+		"pretty-quick": "pretty-quick --staged"
 	},
 	"dependencies": {
-		"fastify": "^4.24.3"
+		"@fastify/static": "^7.0.1",
+		"@mediapipe/tasks-vision": "^0.10.10",
+		"fastify": "^4.24.3",
+		"lodash": "^4.17.21",
+		"modern-normalize": "^2.0.0"
 	},
 	"devDependencies": {
+		"@storybook/addon-essentials": "^7.6.17",
+		"@storybook/addon-interactions": "^7.6.17",
+		"@storybook/addon-links": "^7.6.17",
+		"@storybook/addon-onboarding": "^1.0.11",
+		"@storybook/blocks": "^7.6.17",
+		"@storybook/react": "^7.6.17",
+		"@storybook/react-webpack5": "^7.6.17",
+		"@types/node": "^20.11.24",
 		"@typescript-eslint/eslint-plugin": "^6.11.0",
 		"@typescript-eslint/parser": "^6.11.0",
 		"eslint": "^8.54.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-prettier": "^5.0.1",
+		"eslint-plugin-storybook": "^0.8.0",
 		"pkgroll": "^2.0.1",
 		"prettier": "^3.2.5",
 		"pretty-quick": "^4.0.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"sass": "^1.71.1",
+		"sass-loader": "^14.1.1",
+		"storybook": "^7.6.17",
 		"tsx": "^4.1.4",
-		"typescript": "^5.2.2"
+		"typescript": "^5.2.2",
+		"typescript-plugin-css-modules": "^5.1.0"
 	}
 }

@@ -24,6 +24,7 @@ npm install --save-dev \
 	@types/node@20.9.0 \
 	@typescript-eslint/eslint-plugin@latest \
 	@typescript-eslint/parser@latest \
+	@types/node \
 	eslint@latest \
 	eslint-config-prettier@latest \
 	eslint-plugin-prettier@latest \
@@ -36,3 +37,22 @@ npm install --save-dev \
 # prettier is a code formatter, which makes your code look nice.
 # tsx or "TypeScript Execute" makes it easy to run TypeScript files, especially with ES Modules.
 # pkgroll is a dead-simple way to bundle your code into a single file.
+
+# Storybook setup wizard. Choose "react" and "webpack5" as the framework and builder, respectively.
+npx storybook@latest init
+
+# Add MediaPipe and some other useful libraries.
+npm install \
+	@fastify/static \
+	@mediapipe/tasks-vision \
+	lodash \
+	modern-normalize
+
+# Add support for SCSS modules.
+npm install --save-dev \
+	sass \
+	sass-loader \
+	typescript-plugin-css-modules
+
+# Remove storybook test, don't need it.
+npm remove @storybook/test
