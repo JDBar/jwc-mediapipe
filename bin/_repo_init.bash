@@ -52,6 +52,7 @@ npm install \
 npm install --save-dev \
 	sass \
 	sass-loader \
+	storybook-addon-sass-postcss \
 	typescript-plugin-css-modules
 
 # Remove storybook test, don't need it.

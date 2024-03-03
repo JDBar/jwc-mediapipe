@@ -47,6 +47,7 @@
 		"sass": "^1.71.1",
 		"sass-loader": "^14.1.1",
 		"storybook": "^7.6.17",
+		"storybook-addon-sass-postcss": "^0.2.0",
 		"tsx": "^4.1.4",
 		"typescript": "^5.2.2",
 		"typescript-plugin-css-modules": "^5.1.0"
