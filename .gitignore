@@ -2,6 +2,12 @@
 # This is useful for things like node_modules, which we don't want to commit to
 # our repo because it's huge and we can just install it with npm install.
 
+# public @mediapipe assets
+public/mediapipe/*
+
+# Backup files
+*.bak
+
 # Logs
 logs
 *.log
