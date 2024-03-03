@@ -1,4 +1,7 @@
 import Fastify from "fastify";
+import FastifyStatic from "@fastify/static";
+import Path from "path";
+import Process from "process";
 
 /**
  * Configuration for the fastify server.
@@ -10,9 +13,10 @@ const FASTIFY_OPTIONS: Fastify.FastifyListenOptions = {
 
 const SERVER = Fastify();
 
-// Define routes. e.g. "/" is the root path of the server.
-SERVER.get("/", async () => {
-	return "Hello world!";
+// Serve files in the public folder
+const PUBLIC_ROOT = Path.join(Process.cwd(), "public");
+SERVER.register(FastifyStatic, {
+	root: PUBLIC_ROOT,
 });
 
 // Start the server.
