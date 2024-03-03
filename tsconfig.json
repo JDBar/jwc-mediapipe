@@ -9,6 +9,8 @@
 
 {
 	"compilerOptions": {
+		// Add React support
+		"jsx": "react",
 		// Compile to the latest version of JavaScript.
 		"target": "esnext",
 		// This must be specified if "paths" is. It specifies the base directory for resolving non-relative module names.
@@ -17,8 +19,8 @@
 		// instead of `import foo from '../../foo'`. The src/@types/ folder is for TypeScript type definitions for
 		// JavaScript modules that don't have any type definitions, if needed.
 		"paths": {
-			"*": ["node_modules/*", "src/@types/*"],
-			"@/*": ["./*"]
+			"*": ["src/@types/*"],
+			"@/*": ["src/*"]
 		},
 		// Include the latest version of JavaScript's standard library.
 		"lib": ["esnext", "DOM", "DOM.Iterable"],
@@ -39,12 +41,25 @@
 		// Allow us to import `.ts`, `.mts`, or `.tsx` files.
 		"allowImportingTsExtensions": true,
 		// Do not output any compiled files when we run tsc.
-		"noEmit": true
+		"noEmit": true,
+		// Add type safety for CSS modules
+		"plugins": [
+			{
+				"name": "typescript-plugin-css-modules",
+				"options": {
+					"rendererOptions": {
+						"sass": {
+							"includePaths": ["./"]
+						}
+					}
+				}
+			}
+		]
 	},
 	// This tells TypeScript to only compile files in the `src` folder
 	"include": ["./src"],
-	// This tells TypeScript not to compile files in the `dist` folder
-	"exclude": ["./dist"],
+	// This tells TypeScript not to compile files in the `dist` or `public` folder
+	"exclude": ["./dist", "./public"],
 	// Enables native ESM support, so you can use `.mts` file extension.
 	"ts-node": {
 		"esm": true
