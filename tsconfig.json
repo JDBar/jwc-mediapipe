@@ -1,0 +1,52 @@
+/**
+ * This file is used for configuring the TypeScript compiler.
+ * It might look intimidating, because it kind of is!
+ * But don't worry, you don't need to understand it all.
+ *
+ * If you'd like to learn more about how to choose compiler options, check out this page:
+ * https://www.typescriptlang.org/docs/handbook/modules/guides/choosing-compiler-options.html
+ */
+
+{
+	"compilerOptions": {
+		// Compile to the latest version of JavaScript.
+		"target": "esnext",
+		// This must be specified if "paths" is. It specifies the base directory for resolving non-relative module names.
+		"baseUrl": ".",
+		// This allows us to use absolute imports in our code. For example, we can write `import foo from '@/foo'`
+		// instead of `import foo from '../../foo'`. The src/@types/ folder is for TypeScript type definitions for
+		// JavaScript modules that don't have any type definitions, if needed.
+		"paths": {
+			"*": ["node_modules/*", "src/@types/*"],
+			"@/*": ["./*"]
+		},
+		// Include the latest version of JavaScript's standard library.
+		"lib": ["esnext", "DOM", "DOM.Iterable"],
+		// Allow JavaScript files to be compiled, in case you'd rather write in JavaScript instead of TypeScript.
+		"allowJs": true,
+		// Allow `import foo from 'foo'` instead of `import * as foo from 'foo'`.
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		// Enable strict type checking options. HIGHLY RECOMMENDED.
+		"strict": true,
+		// This allows us to import JSON files.
+		"resolveJsonModule": true,
+		// Put compiled files in the `build` folder (if noEmit is set to false)
+		"outDir": "./dist",
+		// This tells TypeScript how to resolve module names.
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		// Allow us to import `.ts`, `.mts`, or `.tsx` files.
+		"allowImportingTsExtensions": true,
+		// Do not output any compiled files when we run tsc.
+		"noEmit": true
+	},
+	// This tells TypeScript to only compile files in the `src` folder
+	"include": ["./src"],
+	// This tells TypeScript not to compile files in the `dist` folder
+	"exclude": ["./dist"],
+	// Enables native ESM support, so you can use `.mts` file extension.
+	"ts-node": {
+		"esm": true
+	}
+}
