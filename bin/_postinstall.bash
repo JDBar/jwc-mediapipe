@@ -4,3 +4,4 @@
 # Basically, anything you want to run after running npm install.
 
 ./bin/copy_mediapipe_wasm.bash
+./bin/curl_get_mediapipe_tasks.bash

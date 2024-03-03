@@ -5,6 +5,9 @@
 # public @mediapipe assets
 public/mediapipe/*
 
+# Task files downloaded from the web
+public/assets/*.task
+
 # Backup files
 *.bak
 
