@@ -14,6 +14,10 @@ The underlying models are based on TensorFlow Lite, and the library is designed 
 
 - **Web developers** who are curious about using MediaPipe in their projects.
 
+## 💬 [Try chatting with a custom GPT about this repo!](https://chat.openai.com/g/g-zYpPrthfU-jwc-mediapipe-demonstrator)
+
+<img src=https://github.com/JDBar/jwc-mediapipe/assets/15175354/f794a002-c581-4fef-a19d-4c3c1d69b5d6 width=600 />
+
 ## Installation
 
 1. Clone this repository
